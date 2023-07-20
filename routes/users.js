@@ -203,7 +203,7 @@ router.post("/reset-password", async (req, res) => {
 
     // Save the updated user and remove the reset token
     await user.save();
-    await resetToken.remove();
+    await resetToken.deleteOne();
 
     res.json({ message: "Password reset successful." });
   } catch (error) {
