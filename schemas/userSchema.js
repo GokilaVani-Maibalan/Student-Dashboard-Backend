@@ -13,15 +13,15 @@ let UserSchema = new mongoose.Schema(
         return validator.isEmail(value); // validator validates whether it is valid email
       },
     },
-    mobile: { type: String, default: "000-000-0000" },
     password: { type: String, required: true },
+
     createdAt: { type: Date, default: Date.now },
   },
   {
-    collection: "users",
+    collection: "User",
     versionKey: false,
   }
 );
 
-let UserModel = mongoose.model("users", UserSchema);
-module.exports = { UserModel };
+let User = mongoose.model("User", UserSchema);
+module.exports = { User };

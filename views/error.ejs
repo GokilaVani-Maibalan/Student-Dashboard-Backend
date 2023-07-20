@@ -1,0 +1,27 @@
+<!-- error.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Error</title>
+  <style>
+    /* Add some basic styles to make the error page look presentable */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    h1 {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Oops, something went wrong!</h1>
+  <p>We're sorry, but an error occurred while processing your request.</p>
+  <% if (showErrorDetails) { %>
+    <pre><code><%= errorMessage %></code></pre>
+  <% } %>
+</body>
+</html>
