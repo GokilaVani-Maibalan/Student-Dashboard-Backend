@@ -151,11 +151,17 @@ router.post("/forgot-password", async (req, res) => {
     await resetToken.save();
     // Send the reset password email
     const mailOptions = {
-      from: "gokilavanimaibalan18@gmail.com",
+      from: "levelup.learningplatform@gmail.com",
       to: email,
       subject: "Password Reset Request",
-      text: `You are receiving this email because you (or someone else) has requested to reset the password for your account. 
-        Please click on the following link or paste it into your browser to complete the process: 
+      text: `Hi ${user.name},
+
+      Forgot your password?
+      We received a request to reset the password for your account. 
+
+      If you did not make this request then please ignore this email.
+
+      Otherwise, click on the below link or paste it into your browser to complete the process: 
         http://localhost:3000/reset-password/${token}`,
     };
 
