@@ -8,6 +8,13 @@ var usersRouter = require("./routes/users");
 var cors = require("cors");
 
 var usersRouter = require("./routes/users");
+var portfolioRouter = require("./routes/portfolio");
+var leaveRouter = require("./routes/leave");
+var capStoneRouter = require("./routes/capstone");
+var capSubRouter = require("./routes/capsub");
+var webcodeRouter = require("./routes/webcode");
+var webSubRouter = require("./routes/websub");
+
 var app = express();
 
 app.use(cors());
@@ -20,6 +27,12 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 
 app.use("/users", usersRouter);
+app.use("/portfolio", portfolioRouter);
+app.use("/leave", leaveRouter);
+app.use("/capstone", capStoneRouter);
+app.use("/capsub", capSubRouter);
+app.use("/webcode", webcodeRouter);
+app.use("/websub", webSubRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -53,7 +66,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

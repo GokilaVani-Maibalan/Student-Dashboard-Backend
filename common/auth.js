@@ -18,7 +18,7 @@ const hashCompare = async (password, hashedPassword) => {
 const createToken = async (payload) => {
   // can also write as async({name,email,role,id}) instead of object
   let token = await jwt.sign(payload, process.env.secretkey, {
-    expiresIn: "10m",
+    expiresIn: "1d",
   });
   return token;
 };
