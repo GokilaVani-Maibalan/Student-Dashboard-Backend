@@ -26,7 +26,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.set("view engine", "ejs");
 
-app.use("/", usersRouter);
 app.use("/users", usersRouter);
 app.use("/portfolio", portfolioRouter);
 app.use("/leave", leaveRouter);
